@@ -10,10 +10,10 @@
     float: right;
 }
 .Section1{
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #5a189a;
 }
 .Section2{
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #5a189a;
     overflow: hidden;
 }
 .Section3{
@@ -39,4 +39,8 @@ body{
     width: auto;
     border-style: none;
     border-radius: 50%;
+}
+
+h1, h2{
+    color: #5a189a;
 }
