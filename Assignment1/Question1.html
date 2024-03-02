@@ -13,55 +13,51 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <link href="Question1.css" rel="stylesheet" />
   </head>
   <body>
-    <section>
-        <div class="Image">
-            <img class="Image img" src="Images/Hassan.jpg">
-        </div>
-        <div class="Introduction">
-            <h1>Syed Hassan Haider</h1>
-            <h2>Student</h2>
-            <ul>
-            <li>
-                <a href="https://mail.google.com/" target="_blank">
-                <span class="fas fa-envelope"></span>&nbsp
-                syedecommerce5912@gmail.com</a
-                >
-            </li>
-            <li>
-                <a class="phoneClick" id="phoneLink">
-                <span class="fas fa-phone"></span>&nbsp +92 307 4619656</a
-                >
-            </li>
-            <li>
-                <a id="location" class="location">
-                <span class="fas fa-map-marker-alt"></span>&nbsp Block E, Johar Town,
-                Lahore</a
-                >
-            </li>
-            <li>
-                <a href="https://github.com/HassanHaider1212" target="_blank">
-                <span class="fab fa-github"></span>&nbsp
-                github.com/HassanHaider1212</a
-                >
-            </li>
-            <li>
-                <a
-                href="https://www.linkedin.com/in/syed-hassan-haider-ba54a0269/"
-                target="_blank"
-                >
-                <span class="fab fa-linkedin"></span>&nbsp
-                linkedin.com/in/syed-hassan-haider-ba54a0269</a
-                >
-            </li>
-            </ul>
-        </div>
-    </section>
-
-    <section>
+    <section class="Section1">
+      <div class="Image">
+          <img class="Image img" src="Images/Hassan.jpg">
+      </div>
+      <div class="Introduction">
+        <h1>Syed Hassan Haider</h1>
+        <h2>Student</h2>
+        <ul>
+        <li>
+            <a href="https://mail.google.com/" target="_blank">
+            <span class="fas fa-envelope"></span>&nbsp
+            syedecommerce5912@gmail.com</a
+            >
+        </li>
+        <li>
+            <a class="phoneClick" id="phoneLink">
+            <span class="fas fa-phone"></span>&nbsp +92 307 4619656</a
+            >
+        </li>
+        <li>
+            <a id="location" class="location">
+            <span class="fas fa-map-marker-alt"></span>&nbsp Block E, Johar Town,
+            Lahore</a
+            >
+        </li>
+        <li>
+            <a href="https://github.com/HassanHaider1212" target="_blank">
+            <span class="fab fa-github"></span>&nbsp
+            github.com/HassanHaider1212</a
+            >
+        </li>
+        <li>
+            <a
+            href="https://www.linkedin.com/in/syed-hassan-haider-ba54a0269/"
+            target="_blank"
+            >
+            <span class="fab fa-linkedin"></span>&nbsp
+            linkedin.com/in/syed-hassan-haider-ba54a0269</a
+            >
+        </li>
+        </ul>
+      </div>
       <h2>Profile</h2>
       <p>
         As a web and app developer with a passion for innovation, I'm always
@@ -73,7 +69,9 @@
         delivering exceptional results that exceed expectations. Let's connect
         and explore how we can work together to achieve our business goals.
       </p>
-
+    </section>
+    
+    <section class="Section2">
       <span class="education">
         <h2>Education</h2>
         <p>
@@ -101,30 +99,29 @@
         </p>
       </span>
 
-      <div>
-        <span class="skills">
-          <h2>Skills</h2>
-          <p>
-            <li>
-              Java, C++, ASP.NET MVC, Python, JavaScript, jQuery, Html,
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS, Django, SQL
-            </li>
-            <li>Visual Studio, Jupyter Notebook, PyCharm, VS Code</li>
-            <li>
-              Web Development, Android App Development, Web
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scraping, Machine Learning.
-            </li>
-          </p>
-          <h2>Languages</h2>
-          <p>
-            <li>English</li>
-            <li>Urdu</li>
-          </p>
-        </span>
-      </div>
+      <span class="skills">
+        <h2>Skills</h2>
+        <p>
+          <li>
+            Java, C++, ASP.NET MVC, Python, JavaScript, jQuery, Html,
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CSS, Django, SQL
+          </li>
+          <li>Visual Studio, Jupyter Notebook, PyCharm, VS Code</li>
+          <li>
+            Web Development, Android App Development, Web
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scraping, Machine Learning.
+          </li>
+        </p>
+        <h2>Languages</h2>
+        <p>
+          <li>English</li>
+          <li>Urdu</li>
+        </p>
+      </span>
+
     </section>
 
-    <section class="workSection">
+    <section class="Section3">
       <div>
         <h2>Experience</h2>
 
@@ -180,7 +177,7 @@
             predicted using Artificial Intelligence (AI). Python library EEL is
             used for backend connectivity with python model and SQL. Html, CSS,
             JavaScript are used for Desktop App development.</ul>
-             </li>
+            </li>
             <li>
                 <b>HOTELDO- Hotel Booking App Semester 6 </b>
                 <ul>
@@ -203,7 +200,8 @@
         
       </div>
     </section>
-
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
     <script>
       var clipboard = new ClipboardJS("#phoneLink", {
         text: function () {

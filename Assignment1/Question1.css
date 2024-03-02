@@ -1,7 +1,4 @@
-.phoneClick{
-    cursor: pointer;
-}
-.location{
+.phoneClick, .location{
     cursor: pointer;
 }
 .education{
@@ -11,15 +8,21 @@
 .skills{
     width: 30%;
     float: right;
-    display: block;
 }
-.workSection{
+.Section1{
+    border-bottom: 1px solid #ccc;
+}
+.Section2{
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+.Section3{
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 body{
-    padding: 10% 20% 10% 20%;
+    padding: 1% 20% 1% 20%;
     background-color: #e0e1dd;
 }
 .Introduction{
@@ -34,7 +37,6 @@ body{
 }
 .img{
     width: auto;
-    /* padding-left: 20%; */
     border-style: none;
     border-radius: 50%;
 }
