@@ -89,6 +89,10 @@
   display: block;
 }
 
+.menu {
+    display: none;
+}
+
 .footer-container{
     clear: both;
 }
@@ -132,4 +136,80 @@
 .inputdiv{
     padding: 5% 5% 0% 5%;
     margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .navbar {
+        justify-content: space-between;
+    }
+    .menu {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .menu-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    .menu-content a {
+        color: black;
+        padding: 12px 16px;
+        font-size: medium;
+        text-decoration: none;
+        display: block;
+    }
+    
+    .menu-content a:hover {
+        background-color: #ddd;
+    }
+    
+    .menu:hover .menu-content {
+        display: block;
+    }
+    .right_btn {
+        display: none;
+    }
+    .main {
+        /* flex-direction: column; */
+        display: none;
+    }
+    .img{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+    .footer_section{
+        display: inline-flex;
+        flex-direction: column-reverse;
+    }
+    .brightideas{
+        font-size: 3rem;
+        line-height: 4rem;
+        padding: 5% 5% 0% 5%;
+        margin: 0;
+        text-align: center;
+    }
+    .divfooter{
+        display: inline-block;
+        width: 100%;
+        height: auto;
+    }
+    .title-small{
+        padding: 5% 5% 0% 5%;
+        text-align: center;
+    }
+    .input{
+        width: 80%;
+        padding: 20px;
+        border-radius: 25px 25px 25px 25px;
+        outline: none;
+        border-color: rgb(185, 37, 40);
+        display: block;
+        margin: 0 auto;
+    }
 }
