@@ -1,0 +1,20 @@
+.phoneClick{
+    cursor: pointer;
+}
+.location{
+    cursor: pointer;
+}
+.education{
+    width:70%;
+    float: left;
+}
+.skills{
+    width: 30%;
+    float: right;
+    display: block;
+}
+.workSection{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
