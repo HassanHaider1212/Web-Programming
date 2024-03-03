@@ -45,16 +45,101 @@ $(document).ready(function() {
         document.getElementById('EducationDiv').appendChild(educationEntry);
     }
 
-    document.getElementById('SubmitForm').onclick = function() {
+    // var datatableNotes = $('#FormDatatable').on('error.dt', function (e, settings, techNote, message) {
+    //     SessionExpiredRedirect();
+    // }).DataTable({
+    //     "bServerSide": true,
+    //     "bProcessing": true,
+    //     "bSearchable": true,
+    //     "order": [[0, 'desc']],
+    //     "language": {
+    //         "emptyTable": "No record found.",
+    //         "processing": '<i class="fa fa-spinner fa-spin fa-3x fa-fw" style="color:#2a2b2b;"></i><span class="sr-only">Loading...</span> '
+    //     },
+    //     "columns": [
+    //         { "data": "FirstName" },
+    //         { "data": "LastName" },
+    //         { "data": "PhoneNumber" },
+    //         { "data": "EmailAddress" },
+    //         { "data": "Street" },
+    //         { "data": "City" },
+    //         { "data": "State" },
+    //         { "data": "ZipCode" },
+    //         { "data": "Resume" },
+    //         { "data": "CoverLetter" },
+    //         { "data": "EducationLevel" },
+    //         { "data": "School" },
+    //         { "data": "Major" },
+    //         { "data": "GraduationYear" },
+    //         { "data": "JobTitle" },
+    //         { "data": "CompanyName" },
+    //         { "data": "EmploymentStartDate" },
+    //         { "data": "EmploymentEndDate" },
+    //         { "data": "JobResponsibilities" },
+    //         { "data": "Skills" },
+    //         { "data": "Certifications" },
+    //         { "data": "StartDate" },
+    //         { "data": "WorkSchedule" },
+    //         { "data": "Relocate" },
+    //         { "data": "ReferenceName" },
+    //         { "data": "ReferenceContact" },
+    //         { "data": "Relationship" },
+    //         { "data": "WhyWork" },
+    //         { "data": "Agreement" },
+    //         { "data": "PrivacyPolicy" }
+    //     ]
+    // });
+
+    document.getElementById('submissionform').addEventListener('submit', function(event) {
+        
         debugger;
         console.log("Job Application Form Submitted:");
-        
-        var formElements = document.getElementById('submissionform').elements;
+        event.preventDefault(); // Prevent the default form submission
+            
+        // Get form data
+        var formData = {};
+        var formElements = this.elements;
         for (var i = 0; i < formElements.length; i++) {
             var element = formElements[i];
-            var label = document.querySelector('label[for="' + element.id + '"]');
-            var labelText = label ? label.innerText.trim() : element.id;
-            console.log(labelText + ": " + element.value);
+            if (element.name && element.value) {
+                formData[element.name] = element.value;
+            }
         }
-    }
+        
+        // Create a new row in the table
+        var tableBody = document.getElementById('FormData').getElementsByTagName('tbody')[0];
+        var newRow = tableBody.insertRow();
+        Object.values(formData).forEach(function(value) {
+            var cell = newRow.insertCell();
+            cell.appendChild(document.createTextNode(value));
+        });
+
+        // Reset form
+        this.reset();
+        // var formData = {};
+        // var formElements = this.elements;
+        
+        // for (var i = 0; i < formElements.length; i++) {
+        //     var element = formElements[i];
+        //     if (element.name && element.value) {
+        //         if (element.type === 'checkbox') {
+        //             formData[element.name] = element.checked ? 'Yes' : 'No';
+        //         } else {
+        //             formData[element.name] = element.value;
+        //         }
+        //     }
+        // }
+        
+        // var formDataArray = [];
+        // Object.keys(formData).forEach(function(key) {
+        //     formDataArray.push(formData[key]);
+        // });
+        
+        // datatableNotes.row.add(formDataArray).draw();
+    
+        // console.log("Job Application Form Submitted Successfully!");
+        // event.preventDefault(); // Prevent the default form submission behavior
+    });
+    
+    
 });

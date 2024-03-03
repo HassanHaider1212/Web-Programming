@@ -10,11 +10,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/select/1.4.0/css/select.dataTables.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="Question3.css">
 </head>
 <body>
-    
+
     <div class="background">
 
         <form class="container formbackground" id="submissionform">  
@@ -22,28 +23,28 @@
             <h3>Personal Information</h3>
             <div class="form-group" id="PersonalInformationDiv">
                 <label for="FirstName">First Name<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" placeholder="First Name" id="FirstName" required>
+                <input type="text" class="form-control" name="FirstName" placeholder="First Name" id="FirstName" required>
                 <br>
                 <label for="LastName">Last Name</label>
-                <input type="text" class="form-control" placeholder="Last Name" id="LastName">
+                <input type="text" class="form-control" name="LastName" placeholder="Last Name" id="LastName">
                 <br>
                 <label for="PhoneNumber">Phone Number<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" placeholder="Phone Number" id="PhoneNumber" required>
+                <input type="text" class="form-control" name="PhoneNumber" placeholder="Phone Number" id="PhoneNumber" required>
                 <br>
                 <label for="EmailAddress">Email Address<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" placeholder="Email Address" id="EmailAddress" required>
+                <input type="text" class="form-control" name="EmailAddress" placeholder="Email Address" id="EmailAddress" required>
                 <br>
                 <label for="Street">Street</label>
-                <input type="text" class="form-control" placeholder="Street" id="Street">
+                <input type="text" class="form-control" name="Street" placeholder="Street" id="Street">
                 <br>
                 <label for="City">City<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" placeholder="City" id="City" required>
+                <input type="text" class="form-control" name="City" placeholder="City" id="City" required>
                 <br>
                 <label for="State">State</label>
-                <input type="text" class="form-control" placeholder="State" id="State">
+                <input type="text" class="form-control" name="State" placeholder="State" id="State">
                 <br>
                 <label for="ZipCode">Zip Code</label>
-                <input type="text" class="form-control" placeholder="Zip Code" id="ZipCode">
+                <input type="text" class="form-control" name="ZipCode" placeholder="Zip Code" id="ZipCode">
             </div>
             
             <br>
@@ -51,7 +52,7 @@
             <h3>Resume & Cover Letter</h3>
             <div class="form-group" id="ResumeCoverLetterDiv">
                 <label for="Resume">Upload Resume<span class="required" style="color: red;">*</span></label>
-                <input type="file" class="form-control" id="Resume" name="resume" accept=".pdf,.doc,.docx" required>
+                <input type="file" class="form-control" id="Resume" name="Resume" accept=".pdf,.doc,.docx" required>
                 <br>
                 <label for="CoverLetter">Cover Letter</label>
                 <textarea id="CoverLetter" class="form-control" name="CoverLetter" rows="5" required></textarea>
@@ -75,7 +76,7 @@
                 <input type="text" class="form-control" id="School" name="School" required>
                 <br>
                 <label for="Major">Major/Area of Study<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" id="major" name="major" required>
+                <input type="text" class="form-control" id="Major" name="Major" required>
                 <br>
                 <label for="GraduationYear">Graduation Year<span class="required" style="color: red;">*</span></label>
                 <input type="date" class="form-control" id="GraduationYear" name="GraduationYear" required>
@@ -177,19 +178,47 @@
             <button id="SubmitForm" type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
-    
-    <br>   
-    
-    <div class="form-group alert alert-danger" id="resultdiv" hidden>
-        Error: Invalid result!
-    </div>
-    <div id="result_range" hidden style="padding-left: 10px;">
-        <label for="result_range_text">Ratings Range (1-5)</label>
-        <input type="text" class="form-control" id="result_range_text" disabled style="width: 55px;">
-    </div>
-    <div id="tasks">
-        
-    </div> 
+    <br><br><br>
+    <table id="FormData" class="table table-bordered table-striped">
+        <thead style="background: #24a38b;">
+            <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Phone Number</th>
+                <th scope="col">Email Address</th>
+                <th scope="col">Street</th>
+                <th scope="col">City</th>
+                <th scope="col">State</th>
+                <th scope="col">Zip Code</th>
+                <th scope="col">Resume</th>
+                <th scope="col">Cover Letter</th>
+                <th scope="col">Education Level</th>
+                <th scope="col">School</th>
+                <th scope="col">Major</th>
+                <th scope="col">Graduation Year</th>
+                <th scope="col">Job Title</th>
+                <th scope="col">Company Name</th>
+                <th scope="col">Employment Start Date</th>
+                <th scope="col">Employment End Date</th>
+                <th scope="col">Job Responsibilities</th>
+                <th scope="col">Relevant Skills</th>
+                <th scope="col">Certifications</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Work Schedule</th>
+                <th scope="col">Relocate</th>
+                <th scope="col">Reference Name</th>
+                <th scope="col">Reference Contact</th>
+                <th scope="col">Relationship</th>
+                <th scope="col">WhyWork</th>
+                <th scope="col">Agreement</th>
+                <th scope="col">Privacy Policy</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body will be populated dynamically -->
+        </tbody>
+    </table>
+
 </body>
 
 <script src="Question3.js"></script>
