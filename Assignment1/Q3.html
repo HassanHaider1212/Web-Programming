@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="Question3.css">
+</head>
+<body>
+
+    <!-- <div class="container">
+        <img src="/Images/Social.jpg" class="img-responsive center-block" width="500" height="236">
+    </div> -->
+
+    <div class="background">
+
+        <form class="container formbackground" id="submissionform">  
+
+            <h3>Personal Information</h3>
+            <div class="form-group" id="PersonalInformationDiv">
+                <label for="FirstName">First Name<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" placeholder="First Name" id="FirstName" required>
+                <br>
+                <label for="LastName">Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name" id="LastName">
+                <br>
+                <label for="PhoneNumber">Phone Number<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" placeholder="Phone Number" id="PhoneNumber" required>
+                <br>
+                <label for="EmailAddress">Email Address<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" placeholder="Email Address" id="EmailAddress" required>
+                <br>
+                <label for="Street">Street</label>
+                <input type="text" class="form-control" placeholder="Street" id="Street">
+                <br>
+                <label for="City">City<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" placeholder="City" id="City" required>
+                <br>
+                <label for="State">State</label>
+                <input type="text" class="form-control" placeholder="State" id="State">
+                <br>
+                <label for="ZipCode">Zip Code</label>
+                <input type="text" class="form-control" placeholder="Zip Code" id="ZipCode">
+            </div>
+            
+            <br>
+
+            <h3>Resume & Cover Letter</h3>
+            <div class="form-group" id="ResumeCoverLetterDiv">
+                <label for="Resume">Upload Resume<span class="required" style="color: red;">*</span></label>
+                <input type="file" class="form-control" id="Resume" name="resume" accept=".pdf,.doc,.docx" required>
+                <br>
+                <label for="CoverLetter">Cover Letter</label>
+                <textarea id="CoverLetter" class="form-control" name="CoverLetter" rows="5" required></textarea>
+            </div>
+
+            <br>
+            
+            <h3>Education</h3>
+            <div class="form-group" id="EducationDiv">
+                <label for="EducationLevel">Highest Level of Education Attained<span class="required" style="color: red;">*</span></label>
+                <select id="EducationLevel" class="form-control" name="EducationLevel" required>
+                    <option value="">Select</option>
+                    <option value="HighSchool">High School</option>
+                    <option value="AssociatesDegree">Associate's Degree</option>
+                    <option value="BachelorsDegree">Bachelor's Degree</option>
+                    <option value="MastersDegree">Master's Degree</option>
+                    <option value="PhD">Ph.D.</option>
+                </select>
+                <br>
+                <label for="School">Name of School/University<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="School" name="School" required>
+                <br>
+                <label for="Major">Major/Area of Study<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="major" name="major" required>
+                <br>
+                <label for="GraduationYear">Graduation Year<span class="required" style="color: red;">*</span></label>
+                <input type="date" class="form-control" id="GraduationYear" name="GraduationYear" required>
+                <br>
+                <button type="button" id="AddEducation">Add Education</button>
+            </div>
+
+            <br>
+
+            <h3>Previous Job Titles</h3>
+            <div class="form-group" id="JobDiv">
+                <label for="JobTitle">Job Title</label>
+                <input type="text" class="form-control" id="JobTitle" name="JobTitle" >
+                <br>
+                <label for="CompanyName">Company Name</label>
+                <input type="text" class="form-control" id="CompanyName" name="CompanyName" >
+                <br>
+                <label for="EmploymentStartDate">Employment Start Date</label>
+                <input type="date" class="form-control" id="EmploymentStartDate" name="EmploymentStartDate" >
+                <br>
+                <label for="EmploymentEndDate">Employment End Date</label>
+                <input type="date" class="form-control" id="EmploymentEndDate" name="EmploymentEndDate" >
+                <!-- Add checkbox if currently present. -->
+                <br>
+                <label for="JobResponsibilities">Job Responsibilities</label>
+                <textarea class="form-control" id="JobResponsibilities" name="JobResponsibilities" rows="3" ></textarea>
+                <br>
+                <button type="button" id="AddEmployment">Add Employment</button>
+            </div>
+            
+            <br>
+
+            <h3>Skills</h3>
+            <div class="form-group" id="SkillsDiv">
+                <label for="Skills">Relevant Skills<span class="required" style="color: red;">*</span></label>
+                <input type="text" class="form-control" id="Skills" name="Skills" required>
+                <br>
+                <label for="Certifications">Certifications</label>
+                <textarea id="Certifications" class="form-control" name="Certifications" rows="3"></textarea>
+            </div>
+
+            <br>
+
+            <h3>Availability</h3>
+            <div class="form-group" id="AvailabilityDiv">
+                <label for="StartDate">Start Date<span class="required" style="color: red;">*</span></label>
+                <input type="date" class="form-control" id="StartDate" name="StartDate" required>
+                <br>
+                <label for="WorkSchedule">Preferred Work Schedule</label>
+                <input type="text" class="form-control" id="WorkSchedule" name="WorkSchedule">
+                <br>
+                <div class="checkbox">
+                    <label for="Relocate">
+                        <input type="checkbox" id="Relocate" name="Relocate" required>
+                        Willingness to Relocate<span class="required" style="color: red;">*</span>
+                    </label>
+                </div>
+            </div>
+
+            <br>
+
+            <h3>References</h3>
+            <div class="form-group" id="ReferencesDiv">
+                <label for="ReferenceName">Reference Name</label>
+                <input type="text" class="form-control" id="ReferenceName" name="ReferenceName">
+        
+                <label for="ReferenceContact">Reference Contact Information</label>
+                <input type="tel" class="form-control" id="ReferenceContact" name="ReferenceContact">
+        
+                <label for="Relationship">Relationship to Applicant</label>
+                <input type="text" class="form-control" id="Relationship" name="Relationship">
+            </div>
+
+            <br>
+
+            <h3>Additional Questions</h3>
+            <div class="form-group" id="AdditionalQuestionsDiv">
+                <label for="WhyWork">Why do you want to work for this company?</label>
+                <textarea id="WhyWork" class="form-control" name="WhyWork" rows="5"></textarea>
+            </div>
+
+            <br>
+
+            <h3>Consent & Agreement</h3>
+            <div class="form-group" id="ConsentDiv">
+                <div class="checkbox">
+                    <label for="Agreement">
+                        <input type="checkbox" id="Agreement" name="Agreement" required>
+                        I agree to the terms and conditions<span class="required" style="color: red;">*</span>
+                    </label>
+                    <br>
+                    <label for="PrivacyPolicy">
+                        <input type="checkbox" id="PrivacyPolicy" name="PrivacyPolicy" required>
+                        I acknowledge the privacy policy<span class="required" style="color: red;">*</span>
+                    </label>
+                </div>
+            </div>
+
+            <button id="SubmitForm" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    
+    <br>   
+    
+    <div class="form-group alert alert-danger" id="resultdiv" hidden>
+        Error: Invalid result!
+    </div>
+    <div id="result_range" hidden style="padding-left: 10px;">
+        <label for="result_range_text">Ratings Range (1-5)</label>
+        <input type="text" class="form-control" id="result_range_text" disabled style="width: 55px;">
+    </div>
+    <div id="tasks">
+        
+    </div> 
+</body>
+
+<script src="Question3.js"></script>
+
+</html>
