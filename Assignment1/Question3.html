@@ -29,7 +29,7 @@
                 <input type="text" class="form-control" name="LastName" placeholder="Last Name" id="LastName">
                 <br>
                 <label for="PhoneNumber">Phone Number<span class="required" style="color: red;">*</span></label>
-                <input type="text" class="form-control" name="PhoneNumber" placeholder="Phone Number" id="PhoneNumber">
+                <input type="number" class="form-control" name="PhoneNumber" placeholder="Phone Number" id="PhoneNumber">
                 <div id="phoneNumberError" style="color: red;" class="error-message"></div>
                 <br>
                 <label for="EmailAddress">Email Address<span class="required" style="color: red;">*</span></label>
@@ -83,8 +83,8 @@
                 <br>
                 <label for="GraduationYear">Graduation Year<span class="required" style="color: red;">*</span></label>
                 <input type="date" class="form-control" id="GraduationYear" name="GraduationYear" required>
-                <br>
-                <button type="button" id="AddEducation">Add Education</button>
+                <!-- <br>
+                <button type="button" id="AddEducation">Add Education</button> -->
             </div>
 
             <br>
@@ -107,7 +107,7 @@
                 <label for="JobResponsibilities">Job Responsibilities</label>
                 <textarea class="form-control" id="JobResponsibilities" name="JobResponsibilities" rows="3" ></textarea>
                 <br>
-                <button type="button" id="AddEmployment">Add Employment</button>
+                <!-- <button type="button" id="AddEmployment">Add Employment</button> -->
             </div>
             
             <br>
@@ -125,8 +125,8 @@
 
             <h3>Availability</h3>
             <div class="form-group" id="AvailabilityDiv">
-                <label for="StartDate">Start Date<span class="required" style="color: red;">*</span></label>
-                <input type="date" class="form-control" id="StartDate" name="StartDate" required>
+                <label for="StartDate">Start Date</label>
+                <input type="date" class="form-control" id="StartDate" name="StartDate">
                 <br>
                 <label for="WorkSchedule">Preferred Work Schedule</label>
                 <input type="text" class="form-control" id="WorkSchedule" name="WorkSchedule">
@@ -191,7 +191,7 @@
     </button>
  
     <br><br><br>
-    <table id="FormData" class="table table-bordered table-striped" hidden>
+    <table id="FormData" class="table table-bordered table-striped table-responsive" hidden>
         <thead style="background: #24a38b;">
             <tr>
                 <th scope="col">First Name</th>
