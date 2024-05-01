@@ -5,6 +5,8 @@ import { setTeamName, setTotalGamesPlayed, setScore, resetForm } from './redux/s
 import gold from './Images/gold.png';
 import silver from './Images/silver.png';
 import bronze from './Images/bronze.png';
+import avatar from './Images/avatar.png';
+import './index.css';
 
 
 function App() {
@@ -73,6 +75,7 @@ function App() {
 
   return (
     <div className="container">
+      <br></br>
       <form onSubmit={handleSubmit}>
         <h4>Enter Team Name:</h4>
         <input
@@ -108,10 +111,10 @@ function App() {
       <table className='table table-striped table-bordered'>
         <thead className="thead-dark">
           <tr>
-            <th>RANK</th>
-            <th>TEAM NAME</th>
-            <th>TOTAL GAMES PLAYED</th>
-            <th>SCORE</th>
+            <th style={{ color: 'blue' }}>RANK</th>
+            <th style={{ color: 'blue' }}>TEAM NAME</th>
+            <th style={{ color: 'blue' }}>TOTAL GAMES PLAYED</th>
+            <th style={{ color: 'blue' }}>SCORE</th>
           </tr>
         </thead>
         <tbody>
@@ -122,14 +125,22 @@ function App() {
                   <img
                     src={index === 0 ? gold : index === 1 ? silver : bronze}
                     alt={index === 0 ? 'Gold Trophy' : index === 1 ? 'Silver Trophy' : 'Bronze Trophy'}
-                    className="img-fluid rounded" // Set the width and height to very small
-                    style={{ width: '3%', height: '3%' }} // Optional: Add some spacing between rank number and trophy image
+                    className="img-fluid rounded" 
+                    style={{ width: '3%', height: '3%' }} 
                   />
                 ) : (
                   index + 1
                 )}
               </td>
-              <td>{record.teamName}</td>
+              <td>
+                <img 
+                  src = {avatar}
+                  alt= {'avatar'}
+                  className="img-fluid rounded" 
+                  style={{ width: '3%', height: '3%' }} 
+                /> 
+                {record.teamName}
+              </td>
               <td>{record.totalGamesPlayed}</td>
               <td>{"+" + record.score}</td>
             </tr>
